@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "url": "chrome-extension://capljdjkifilpedkoinoebofakhfgcha/blocked.html"
+      }
+    },
+    "condition": {
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  }
+]
