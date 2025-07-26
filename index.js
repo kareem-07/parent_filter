@@ -1,4 +1,3 @@
-const HIGHEST_RESERVED_ID = 1
 const saveFiltersBtn = document.getElementById('save-filters-btn')
 saveFiltersBtn.addEventListener('click', e => {
   const filters = document.querySelectorAll('.filter')
@@ -6,7 +5,7 @@ saveFiltersBtn.addEventListener('click', e => {
   const removeRuleIds = []
   filters.forEach((filter, i) => {
     console.log(`Filtering ${filter.value}`)
-    const id = HIGHEST_RESERVED_ID + i + 1
+    const id = i + 1
     removeRuleIds.push(id)
     rules.push({
       id: id,
@@ -19,7 +18,7 @@ saveFiltersBtn.addEventListener('click', e => {
     })
   })
   chrome.declarativeNetRequest.updateDynamicRules({
-    removeRuleIds: [2, 3],
+    removeRuleIds: [1, 2],
     addRules: rules
   })
 })

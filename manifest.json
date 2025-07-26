@@ -11,28 +11,15 @@
   "action": {
     "default_popup": "index.html"
   },
-  "background": {
-    "service_worker": "background.js"
-  },
   "content_scripts": [
     {
       "matches": [
-        "*://www.google.com/*",
-        "*://www.bing.com/*"
+        "<all_urls>"
       ],
       "js": [
         "blocker.js"
       ],
       "run_at": "document_start"
     }
-  ],
-  "declarative_net_request": {
-    "rule_resources": [
-      {
-        "id": "ruleset_1",
-        "enabled": true,
-        "path": "rules.json"
-      }
-    ]
-  }
+  ]
 }
